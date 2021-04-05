@@ -1,1 +1,3 @@
-# patika.dev-todo
+# Patika.dev 
+
+Frontend Developer Challenge To-Do App
