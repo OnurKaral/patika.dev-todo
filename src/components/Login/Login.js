@@ -1,52 +1,98 @@
-import React, { useState } from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { Button, Checkbox, Form } from "semantic-ui-react";
+import { Checkbox, Form } from "semantic-ui-react";
+import Button from "@material-ui/core/Button";
 import "./Login.css";
+import Dashboard from "../Dashboard";
+import { BrowserRouter, Route, Switch, Link, NavLink } from "react-router-dom";
 
-async function loginUser(credentials) {
-  return fetch("http://localhost:8080/login", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(credentials),
-  }).then((data) => data.json());
-}
+export default class Login extends Component {
+  userData;
 
-export default function Login({ setToken }) {
-  const [username, setUserName] = useState();
-  const [lastname, setLastName] = useState();
-  const handleSubmit = async (e) => {
+  constructor(props) {
+    super(props);
+
+    this.onChangeName = this.onChangeName.bind(this);
+    this.onChangeSurname = this.onChangeSurname.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
+
+    this.state = {
+      name: "",
+      surname: "",
+    };
+  }
+
+  // Form Events
+  onChangeName(e) {
+    this.setState({ name: e.target.value });
+  }
+
+  onChangeSurname(e) {
+    this.setState({ surname: e.target.value });
+  }
+
+  // React Life Cycle
+  componentDidMount() {
+    this.userData = JSON.parse(localStorage.getItem("user"));
+
+    if (localStorage.getItem("user")) {
+      this.setState({
+        name: this.userData.name,
+        surname: this.userData.surname,
+      });
+    } else {
+      this.setState({
+        name: "",
+        surname: "",
+      });
+    }
+  }
+
+  componentWillUpdate(nextProps, nextState) {
+    localStorage.setItem("user", JSON.stringify(nextState));
+  }
+  onSubmit(e) {
     e.preventDefault();
-    const token = await loginUser({
-      username,
-      lastname,
-    });
-    setToken(token);
-  };
-  return (
-    <div className="login-wrapper">
-      <h1>Please Log In</h1>
-      <Form onSubmit={handleSubmit}>
-        <Form.Field>
-          <label>First Name</label>
-          <input
-            placeholder="First Name"
-            onChange={(e) => setUserName(e.target.value)}
-          />
-        </Form.Field>
-        <Form.Field>
-          <label>Last Name</label>
-          <input
-            placeholder="Last Name"
-            onChange={(e) => setLastName(e.target.value)}
-          />
-        </Form.Field>
-        <Button type="submit">Submit</Button>
-      </Form>
-    </div>
-  );
+  }
+
+  render() {
+    return (
+      <div className="login-wrapper">
+        <Form onSubmit={this.onSubmit}>
+          <Form.Field>
+            <div className="form-group">
+              <label>Name</label>
+              <input
+                type="text"
+                className="form-control"
+                value={this.state.name}
+                onChange={this.onChangeName}
+              />
+            </div>
+          </Form.Field>
+
+          <Form.Field>
+            <div className="form-group">
+              <label>Surname</label>
+              <input
+                type="text"
+                className="form-control"
+                value={this.state.surname}
+                onChange={this.onChangeSurname}
+              />
+            </div>
+          </Form.Field>
+
+          <Button
+            type="submit"
+            className="btn btn-primary btn-block"
+            component={Link}
+            to="/dashboard"
+          >
+            Submit
+          </Button>
+        </Form>
+      </div>
+    );
+  }
 }
-Login.propTypes = {
-  setToken: PropTypes.func.isRequired,
-};

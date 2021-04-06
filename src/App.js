@@ -5,28 +5,21 @@ import React, { useState } from "react";
 import Dashboard from "./components/Dashboard";
 import Preferences from "./components/Preferences";
 import Login from "./components/Login/Login";
-import useToken from "../src/useToken";
+import ReactDOM from "react-dom";
 
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 function App() {
-  const { token, setToken } = useToken();
-
-  if (!token) {
-    return <Login setToken={setToken} />;
-  }
-
   return (
     <div className="wrapper">
       <h1>Application</h1>
       <BrowserRouter>
         <Switch>
-          <Route path="/dashboard">
-            <Dashboard />
-          </Route>
-          <Route path="/preferences">
-            <Preferences />
-          </Route>
+          <Route path="/" exact component={Login} />
+
+          <Route path="/dashboard" component={Dashboard} />
+
+          <Route path="/preferences" component={Preferences} />
         </Switch>
       </BrowserRouter>
     </div>
