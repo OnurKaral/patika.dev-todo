@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Checkbox, Form } from "semantic-ui-react";
 import Button from "@material-ui/core/Button";
 import "./Login.css";
-import Dashboard from "../Dashboard";
+import Dashboard from "../../screens/Dashboard";
 import { BrowserRouter, Route, Switch, Link, NavLink } from "react-router-dom";
 
 export default class Login extends Component {

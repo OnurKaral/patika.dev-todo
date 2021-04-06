@@ -2,10 +2,10 @@ import "./App.css";
 import "semantic-ui-css/semantic.min.css";
 import React, { useState } from "react";
 
-import Dashboard from "./components/Dashboard";
-import Preferences from "./components/Preferences";
+import Dashboard from "./screens/Dashboard";
+import Preferences from "./screens/Preferences";
 import Login from "./components/Login/Login";
-import ReactDOM from "react-dom";
+import Layout from "./components/Layout";
 
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
@@ -14,13 +14,19 @@ function App() {
     <div className="wrapper">
       <h1>Application</h1>
       <BrowserRouter>
-        <Switch>
-          <Route path="/" exact component={Login} />
+        <Route
+          render={(props) => (
+            <Layout {...props}>
+              <Switch>
+                <Route path="/" exact component={Login} />
 
-          <Route path="/dashboard" component={Dashboard} />
+                <Route path="/dashboard" component={Dashboard} />
 
-          <Route path="/preferences" component={Preferences} />
-        </Switch>
+                <Route path="/preferences" component={Preferences} />
+              </Switch>
+            </Layout>
+          )}
+        />
       </BrowserRouter>
     </div>
   );
