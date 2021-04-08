@@ -11,25 +11,6 @@ function Sidebar(props, { defaultActive }) {
     lastActiveIndex || defaultActive
   );
 
-  function changeActiveIndex(newIndex) {
-    localStorage.setItem("lastActiveIndex", newIndex);
-    setActiveIndex(newIndex);
-  }
-
-  function getPath(path) {
-    if (path.charAt(0) !== "/") {
-      return "/" + path;
-    }
-    return path;
-  }
-
-  useEffect(() => {
-    const activeItem = SidebarItems.findIndex(
-      (item) => getPath(item.route) === getPath(location.pathname)
-    );
-    changeActiveIndex(activeItem);
-  }, [location]);
-
   return (
     <>
       <SidebarParent>

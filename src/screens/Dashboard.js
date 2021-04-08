@@ -1,14 +1,19 @@
 import React from "react";
 import MCard from "../components/MCard";
+import GridLayout from "react-grid-layout";
+import { Card } from "@material-ui/core";
 
-
-function Dashboard(props) {
-  console.log("Dashboard props", props);
-  return (
-    <div className="App">
+class Dashboard extends React.Component {
+  render() {
+    return (
+      <div>
         <MCard />
-    </div>
-  );
+        <MCard />
+        <MCard />
+        <MCard />
+      </div>
+    );
+  }
 }
 
 export default Dashboard;
