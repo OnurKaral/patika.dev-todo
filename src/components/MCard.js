@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { Checkbox, Form,Card } from "semantic-ui-react";
+import { Checkbox, Form,Card,Item} from "semantic-ui-react";
 import Button from "@material-ui/core/Button";
 import Todo from './Todo'
 
@@ -27,10 +27,13 @@ export default class MCard extends Component {
 
   render() {
     return (
-      <Card>
-      
-          <Todo/>
-    </Card>
+      <Item>
+
+      <Item.Content>
+        <Item.Header as='a'>TODO</Item.Header>
+        <Todo/>
+      </Item.Content>
+    </Item>
     );
   }
 }

@@ -2,7 +2,6 @@ import React, { PureComponent } from 'react';
 import TodoList from './Todo/TodoList'
 import Header from './Todo/Header'
 import Footer from './Todo/Footer'
-import Footerinfo from './Todo/Footerinfo'
 import '../index.css'
 
 const todoStatus = (listTodos = [], status = '', id) => {
@@ -83,7 +82,6 @@ class Todo extends PureComponent {
         />
       </div>
 
-       <Footerinfo/>
     </>
     );
   }
