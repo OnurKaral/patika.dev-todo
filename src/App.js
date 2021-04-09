@@ -19,7 +19,6 @@ function App() {
             <Layout
               {...props}
               style={{
-                display: "flex",
                 justifyContent: "start",
                 alignItems: "start",
               }}
