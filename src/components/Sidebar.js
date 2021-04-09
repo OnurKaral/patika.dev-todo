@@ -13,7 +13,7 @@ function Sidebar(props, { defaultActive }) {
   return (
     <>
       <SidebarParent>
-        <div style={{ position: "fixed" }}>
+        <div style={{ position: "relative" }}>
           {SidebarItems.map((item, index) => {
             return (
               <Link to={item.route}>
