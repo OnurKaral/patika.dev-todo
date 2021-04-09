@@ -15,8 +15,8 @@ function Sidebar(props, { defaultActive }) {
           {SidebarItems.map((item, index) => {
             return (
               <Link to={item.route}>
-                <SidebarItem key={item.name} active={index === activeIndex}>
-                  <p>{item.name}</p>
+                <SidebarItem key={item.userData} active={index === activeIndex}>
+                  <p>{item.userData}</p>
                 </SidebarItem>
               </Link>
             );
