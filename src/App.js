@@ -1,6 +1,6 @@
 import "./App.css";
 import "semantic-ui-css/semantic.min.css";
-import React, { useState } from "react";
+import React  from "react";
 
 import Dashboard from "./screens/Dashboard";
 import Preferences from "./screens/Preferences";

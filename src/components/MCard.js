@@ -1,7 +1,4 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
-import { Checkbox, Form, Card, Item } from "semantic-ui-react";
-import Button from "@material-ui/core/Button";
 import Todo from "./Todo";
 
 export default class MCard extends Component {

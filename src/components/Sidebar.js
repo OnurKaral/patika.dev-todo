@@ -1,13 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 import styled from "styled-components";
 import SidebarItems from "./SidebarItems";
 import { Link } from "react-router-dom";
 
 function Sidebar(props, { defaultActive }) {
-  const location = props.history.location;
   const lastActiveIndexString = localStorage.getItem("lastActiveIndex");
   const lastActiveIndex = Number(lastActiveIndexString);
-  const [activeIndex, setActiveIndex] = useState(
+  const [activeIndex] = useState(
     lastActiveIndex || defaultActive
   );
 
