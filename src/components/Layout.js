@@ -5,7 +5,7 @@ import Nav from "./Nav";
 function Layout(props) {
   return (
     <div>
-      <div style={{ display: "flex" }}>
+      <div>
         <Sidebar history={props.history} />
         <div>
           <Nav />
