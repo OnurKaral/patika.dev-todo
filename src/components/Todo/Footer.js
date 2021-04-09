@@ -1,13 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { memo } from "react";
 const Footer = memo((props) => {
-  const {
-    setStatusFilter,
-    activeButton,
-    clearCompleted,
-    TodosLeft,
-    Todos,
-  } = props;
+  const { setStatusFilter, activeButton, TodosLeft } = props;
   return (
     <footer className="footer">
       <span className="todo-count">
