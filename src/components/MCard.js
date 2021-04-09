@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Todo from "./Todo";
+import Card from "@material-ui/core/Card";
 
 export default class MCard extends Component {
   constructor(props) {
@@ -23,7 +24,9 @@ export default class MCard extends Component {
   render() {
     return (
       <div style={{ display: "flex" }}>
-        <Todo />
+        <Card>
+          <Todo />
+        </Card>
       </div>
     );
   }

@@ -5,9 +5,6 @@ class Dashboard extends React.Component {
     return (
       <div>
         <MCard />
-        <MCard />
-        <MCard />
-        <MCard />
       </div>
     );
   }
