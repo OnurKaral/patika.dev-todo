@@ -1,6 +1,6 @@
 import "./App.css";
 import "semantic-ui-css/semantic.min.css";
-import React  from "react";
+import React from "react";
 
 import Dashboard from "./screens/Dashboard";
 import Preferences from "./screens/Preferences";
@@ -11,7 +11,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 function App() {
   return (
-    <div className="wrapper">
+    <div>
       <h1>Application</h1>
       <BrowserRouter>
         <Route
