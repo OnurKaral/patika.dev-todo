@@ -1,3 +1,4 @@
+import "./App.css";
 import "semantic-ui-css/semantic.min.css";
 import React from "react";
 
@@ -10,12 +11,19 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 function App() {
   return (
-    <>
+    <div>
       <h1>Application</h1>
       <BrowserRouter>
         <Route
           render={(props) => (
-            <Layout {...props}>
+            <Layout
+              {...props}
+              style={{
+                display: "flex",
+                justifyContent: "start",
+                alignItems: "start",
+              }}
+            >
               <Switch>
                 <Route path="/" exact component={Login} />
 
@@ -27,7 +35,7 @@ function App() {
           )}
         />
       </BrowserRouter>
-    </>
+    </div>
   );
 }
 
