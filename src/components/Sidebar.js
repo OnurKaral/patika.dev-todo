@@ -1,4 +1,4 @@
-import React, {  useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import SidebarItems from "./SidebarItems";
 import { Link } from "react-router-dom";
@@ -6,9 +6,7 @@ import { Link } from "react-router-dom";
 function Sidebar(props, { defaultActive }) {
   const lastActiveIndexString = localStorage.getItem("lastActiveIndex");
   const lastActiveIndex = Number(lastActiveIndexString);
-  const [activeIndex] = useState(
-    lastActiveIndex || defaultActive
-  );
+  const [activeIndex] = useState(lastActiveIndex || defaultActive);
 
   return (
     <>
@@ -35,17 +33,9 @@ export default Sidebar;
 const SidebarParent = styled.div`
   background: #cf3d2a;
 
-  a {
-    text-decoration: none;
-  }
-
   & > div {
     width: 250px;
     height: 100vh;
-  }
-
-  .behind-the-scenes {
-    width: 250px;
   }
 `;
 
@@ -59,13 +49,5 @@ const SidebarItem = styled.div`
     color: white;
     font-weight: bold;
     text-decoration: none;
-  }
-
-  &:hover {
-    cursor: pointer;
-  }
-
-  &:hover:not(:first-child) {
-    background: #c34a36;
   }
 `;
