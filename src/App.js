@@ -1,4 +1,3 @@
-import "./App.css";
 import "semantic-ui-css/semantic.min.css";
 import React from "react";
 
@@ -11,7 +10,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 function App() {
   return (
-    <div>
+    <>
       <h1>Application</h1>
       <BrowserRouter>
         <Route
@@ -28,7 +27,7 @@ function App() {
           )}
         />
       </BrowserRouter>
-    </div>
+    </>
   );
 }
 
