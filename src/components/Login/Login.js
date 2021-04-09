@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 
-import {  Form } from "semantic-ui-react";
+import { Form } from "semantic-ui-react";
 import Button from "@material-ui/core/Button";
 import "./Login.css";
-import {  Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default class Login extends Component {
   userData;
