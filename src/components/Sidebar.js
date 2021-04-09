@@ -32,11 +32,6 @@ export default Sidebar;
 
 const SidebarParent = styled.div`
   background: #cf3d2a;
-
-  & > div {
-    width: 250px;
-    height: 100vh;
-  }
 `;
 
 const SidebarItem = styled.div`
